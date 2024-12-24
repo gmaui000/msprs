@@ -50,7 +50,8 @@ pub async fn run_forever(
         let mut recv_buff = Vec::<u8>::default();
         recv_buff.resize(socket_recv_buffer_size, 0);
 
-        let mut packets_reorder = RtpPacketReOrder::new(3, "udp.output.ps");
+        let mut packets_reorder =
+            RtpPacketReOrder::new(3, &format!("udp.{}.output.ps", udp_stream_handler.port));
 
         loop {
             tokio::select! {
@@ -104,7 +105,7 @@ pub async fn run_forever(
                             continue;
                         }
                         Ok((mut tcp_stream, addr)) => {
-                            let mut packets_reorder = RtpPacketReOrder::new(3, "tcp.output.ps");
+                            let mut packets_reorder = RtpPacketReOrder::new(3, &format!("tcp.{}.output.ps", tcp_stream_handler.port));
 
                             loop {
                                 tokio::select! {

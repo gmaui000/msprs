@@ -1,1 +1,1 @@
-# msprs
+# msprs - MediaStreamPlatform with rust.

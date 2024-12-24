@@ -1,0 +1,6 @@
+Cargo.lock
+target/
+src/version.rs
+logs/
+*.ps
+.vscode/

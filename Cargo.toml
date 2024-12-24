@@ -1,0 +1,41 @@
+[package]
+name = "msprs"
+version = "0.0.1"
+edition = "2021"
+license = "MIT"
+authors = ["gmaui000@163.com"]
+publish = false
+
+[dependencies]
+anyhow = "1.0"
+chrono = { version = "0.4.38" }
+ffmpeg-sys-next = { version = "7.0.2" }
+futures = { version = "0.3.30" }
+futures-util = "0.3.30"
+libc = { version = "0.2.158" }
+local-ip-address = { version = "0.6.1" }
+prost = { version = "0.13.2" }
+prost-types = { version = "0.13.2" }
+rtp = { version = "0.12.0" }
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+serde_yaml = "0.9"
+structopt = { version = "0.3.26" }
+time = { version = "0.3.36", features = ["formatting", "macros"] }
+clap = { version = "4.5", features = ["derive"] }
+tracing = { version = "0.1.40" }
+tracing-appender = { version = "0.2.3" }
+tracing-subscriber = { version = "0.3.18 ", features = [
+    "env-filter",
+    "time",
+    "local-time",
+    "json",
+] }
+tokio = { version = "1.39.2", features = ["full"] }
+tonic = { version = "0.12.2" }
+webrtc-util = { version = "0.10.0" }
+
+[build-dependencies]
+regex = { version = "1.10.6" }
+tonic-build = { version = "0.12.2" }
+walkdir = { version = "2.5.0" }

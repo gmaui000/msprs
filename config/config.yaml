@@ -1,0 +1,7 @@
+!Config
+host: 0.0.0.0
+my_ip: ""
+grpc_port: 7080
+stream_port_start: 10001
+stream_port_stop: 20000
+socket_recv_buffer_size: 65535

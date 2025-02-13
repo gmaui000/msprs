@@ -12,6 +12,15 @@ impl MyGbtStreamService {
     ) -> Result<Response<BindStreamPortResponse>, Status> {
         let mut reply = BindStreamPortResponse::default();
 
+        // stub for mediaserver
+        if true {
+            reply.code = ResponseCode::Ok.into();
+            reply.message = String::new();
+            reply.media_server_ip = String::from("192.168.31.164");
+            reply.media_server_port = 10000;
+            return Ok(Response::new(reply));
+        }
+
         // alloc port
         let port = self.pop_port();
         if port == 0 {

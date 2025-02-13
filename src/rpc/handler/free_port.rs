@@ -11,8 +11,11 @@ impl MyGbtStreamService {
         let req = request.into_inner();
         let port = req.media_server_port as u16;
 
-        self.pop_task(port).await;
-        self.push_port(port);
+        // stub for mediaserver
+        if false {
+            self.pop_task(port).await;
+            self.push_port(port);
+        }
 
         let reply = FreeStreamPortResponse {
             code: ResponseCode::Ok.into(),
